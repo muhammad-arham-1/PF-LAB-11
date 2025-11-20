@@ -52,19 +52,21 @@ int main(){
 //	}
 
 //	Reading Vowels from the file
-	char c;
+	int c;
 	int vowelCount = 0;
 	int total = 0;
 	while ((c = fgetc(fp)) != EOF){
-		switch(c){
+		if ((c>='A' && c<='Z') || ((c>='a' && c<='z'))){
+			switch(c){
 			case 'a': case'e': case 'i': case'o': case 'u': case 'A': case'E': case 'I': case'O': 
 			case 'U': 
 				vowelCount++;
 				break;
-		}
-		total++;
+			}
+			total++;
+		}	
 	}	
-	printf("Vowels: %d\n Consonants: %d", vowelCount, total-vowelCount);
+	printf("Vowels: %d\nConsonants: %d", vowelCount, total-vowelCount);
 	
 	
 //	For closing the file
